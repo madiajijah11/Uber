@@ -1,0 +1,14 @@
+import { StyleSheet } from "react-native";
+
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: "#2b80ff",
+        padding: 20,
+        borderRadius: 10,
+    },
+    title: {},
+    text: {},
+    learnMore: {},
+});
+
+export default styles;
