@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
         color: "#000",
     },
     timeContainer: {
-        borderRadius: 10,
+        borderRadius: 20,
         flexDirection: "row",
         width: 80,
         justifyContent: "space-between",
