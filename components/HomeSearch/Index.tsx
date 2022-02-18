@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, ScrollView } from "react-native";
+import { View, Text } from "react-native";
 
 import { Feather } from "@expo/vector-icons";
 import styles from "./styles";
@@ -8,7 +8,6 @@ const HomeSearch = () => {
     return (
         <View style={styles.container}>
             {/* Input Box */}
-            <ScrollView>
             <View style={styles.inputBox}>
                 <Text style={styles.inputText}>Where to?</Text>
                 <View style={styles.timeContainer}>
@@ -39,7 +38,6 @@ const HomeSearch = () => {
                 </View>
                 <Text style={styles.destinationText}>Sarah Home</Text>
             </View>
-            </ScrollView>
         </View>
     );
 }
