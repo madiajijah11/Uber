@@ -4,7 +4,8 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: "#2b80ff",
         padding: 20,
-        borderRadius: 10,
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10,
     },
     title: {
         color: "white",
@@ -21,7 +22,8 @@ const styles = StyleSheet.create({
         color: "white",
         fontSize: 16,
         fontWeight: "bold",
-    }
+    },
+    
 });
 
 export default styles;
