@@ -58,14 +58,14 @@ function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="HomeScreen"
+      initialRouteName="Home"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
       }}>
       <BottomTab.Screen
-        name="HomeScreen"
+        name="Home"
         component={HomeScreen}
-        options={({ navigation }: RootTabScreenProps<'HomeScreen'>) => ({
+        options={({ navigation }: RootTabScreenProps<'Home'>) => ({
           title: 'Home Page',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (

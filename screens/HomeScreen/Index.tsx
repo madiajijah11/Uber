@@ -4,7 +4,7 @@ import EditScreenInfo from '../../components/EditScreenInfo';
 import { Text, View } from '../../components/Themed';
 import { RootTabScreenProps } from '../../types';
 
-export default function HomeScreen({ navigation }: RootTabScreenProps<'HomeScreen'>) {
+export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>This is HomeScreen now using TabOne template</Text>
