@@ -22,6 +22,26 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         padding: 5,
     },
+    row: {
+        flexDirection: "row",
+        padding: 20,
+        alignItems: "center",
+        borderBottomWidth: 1,
+        borderColor: "#d9d9d9",
+    },
+    iconContainer: {
+        padding: 10,
+        borderRadius: 25,
+        backgroundColor: "#d9d9d9",
+    },
+    destinationText: {
+        marginLeft: 10,
+        fontSize: 16,
+        fontWeight: "500",
+    },
+    container: {
+        backgroundColor: "white",
+    }
 });
 
 export default styles;
