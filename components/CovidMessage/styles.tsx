@@ -6,9 +6,22 @@ const styles = StyleSheet.create({
         padding: 20,
         borderRadius: 10,
     },
-    title: {},
-    text: {},
-    learnMore: {},
+    title: {
+        color: "white",
+        fontSize: 20,
+        fontWeight: "bold",
+        marginBottom: 10,
+    },
+    text: {
+        color: "white",
+        fontSize: 14,
+        marginBottom: 10,
+    },
+    learnMore: {
+        color: "white",
+        fontSize: 16,
+        fontWeight: "bold",
+    }
 });
 
 export default styles;

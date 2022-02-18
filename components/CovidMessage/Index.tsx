@@ -1,12 +1,14 @@
 import React from "react";
 import { View, Text } from "react-native";
 
+import styles from "./styles";
+
 const CovidMessage = () => {
     return (
-        <View>
-            <Text>Covid Message</Text>
-            <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</Text>
-            <Text>Learn More</Text>
+        <View style={styles.container} >
+            <Text style={styles.title}>Covid Message</Text>
+            <Text style={styles.text}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</Text>
+            <Text style={styles.learnMore}>Learn More</Text>
         </View>
     );
 }
