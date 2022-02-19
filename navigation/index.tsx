@@ -16,6 +16,7 @@ import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
 import HomeScreen from '../screens/HomeScreen/Index';
 import DestinationSearch from '../screens/DestinationSearch/Index';
+import SearchResults from '../screens/SearchResults/Index';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
@@ -89,6 +90,14 @@ function BottomTabNavigator() {
         component={DestinationSearch}
         options={{
           title: 'Destination Page',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Results"
+        component={SearchResults}
+        options={{
+          title: 'Results Page',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
