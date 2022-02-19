@@ -10,7 +10,7 @@ import styles from "./styles";
 const UberTypes = () => {
     return (
         <View>
-           {TypesData.map((type => <UberTypeRow />))}
+           {TypesData.map((type => <UberTypeRow type={type} />))}
         </View>
     );
 }
