@@ -4,6 +4,7 @@ const styles = StyleSheet.create({
     confirmPress: {
         backgroundColor: "black",
         padding: 10,
+        margin: 10,
         alignItems: "center",
     },
     Text: {
