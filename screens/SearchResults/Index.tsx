@@ -1,11 +1,15 @@
 import React from "react";
-import { Text, View, TextInput, SafeAreaView } from "react-native";
+import { View } from "react-native";
+
+import HomeMap from "../../components/HomeMap/Index";
+import UberTypes from "../../components/UberTypes/Index";
 
 const SearchResults = () => {
     return (
-        <SafeAreaView>
-            <Text>Test</Text>
-        </SafeAreaView>
+        <View>
+        <HomeMap />
+        <UberTypes />
+        </View>
     );
 }
 
