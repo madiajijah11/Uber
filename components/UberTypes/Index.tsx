@@ -3,12 +3,14 @@ import { Text, View, TextInput, SafeAreaView } from "react-native";
 
 import UberTypeRow from "../UberTypeRow/Index";
 
+import TypesData from "../../assets/data/types";
+
 import styles from "./styles";
 
 const UberTypes = () => {
     return (
         <View>
-            <UberTypeRow />
+           {TypesData.map((type => <UberTypeRow />))}
         </View>
     );
 }
