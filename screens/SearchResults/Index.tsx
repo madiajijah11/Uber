@@ -7,7 +7,7 @@ import styles from "./styles";
 
 const SearchResults = () => {
     return (
-        <View style={styles.container}>
+        <View>
         <HomeMap />
         <UberTypes />
         </View>
