@@ -5,7 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 
 import styles from "./styles";
 
-const UberTypeRow = (props) => {
+const UberTypeRow = (props: { type: any; }) => {
     const { type } = props;
 
     const getImage = () => {
