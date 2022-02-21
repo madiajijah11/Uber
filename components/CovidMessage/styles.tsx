@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
         padding: 20,
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10,
+        height: 180,
     },
     title: {
         color: "white",

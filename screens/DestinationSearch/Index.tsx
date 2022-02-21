@@ -1,20 +1,56 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, TextInput, SafeAreaView } from "react-native";
+
+import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
 import styles from "./styles";
 
 const DestinationSearch = () => {
-    const [fromText , setFromText] = useState("");
-    const [destinationText , setDestinationText] = useState("");
+  const [originPlace, setOriginPlace] = useState(null);
+  const [destinationPlace, setDestinationPlace] = useState(null);
 
-    return(
-        <SafeAreaView>
-            <View style={styles.container}>
-            <TextInput style={styles.inputText} placeholder="From" value={fromText} onChangeText={setFromText} />
-            <TextInput style={styles.inputText} placeholder="Where to go?" value={destinationText} onChangeText={setDestinationText} />
-            </View>
-        </SafeAreaView>
-    );
-}
+  useEffect(() => {
+    console.warn("originPlace", originPlace);
+    if (originPlace && destinationPlace) {
+      console.warn("destinationPlace", destinationPlace);
+    }
+  }), [originPlace, destinationPlace];
+
+  return (
+    <SafeAreaView>
+      <View style={styles.container}>
+        <GooglePlacesAutocomplete
+          styles={styles.inputText}
+          placeholder="From"
+          onPress={(data, details = null) => {
+            setOriginPlace({ data, details });
+            // 'details' is provided when fetchDetails = true
+            console.log(data, details);
+          }}
+          fetchDetails={true}
+          query={{
+            key: "YOUR API KEY",
+            language: "en",
+          }}
+        />
+
+        <GooglePlacesAutocomplete
+          styles={styles.inputText}
+          placeholder="Where to go?"
+          onPress={(data, details = null) => {
+            setDestinationPlace({ data, details });
+            // 'details' is provided when fetchDetails = true
+            console.log(data, details);
+          }}
+          fetchDetails={true}
+          query={{
+            key: "YOUR API KEY",
+            language: "en",
+          }}
+        />
+      </View>
+    </SafeAreaView>
+  );
+};
 
 export default DestinationSearch;

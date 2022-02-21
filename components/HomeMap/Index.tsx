@@ -1,25 +1,42 @@
 import React from "react";
-import { View, Text, Dimensions } from "react-native";
+import { View, Image, FlatList } from "react-native";
 
-import MapView, {Marker} from "react-native-maps";
+import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import styles from "./styles";
+import cars from "../../assets/data/cars";
 
 const HomeMap = () => {
-    return (
-        <View style={styles.container}>
-            <MapView 
-            style={styles.map}
-            initialRegion={{
-                latitude: 22.315713,
-                longitude: 114.172806,
-                latitudeDelta: 0.0922,
-                longitudeDelta: 0.0421,
-              }}>
-            <Marker coordinate={{ latitude : 22.315713 , longitude : 114.172806 }}
-                image={require("../../assets/images/top-UberX.png")}/>
-            </MapView>
-        </View>
-    );
-}
+  const getImage = (type: string) => {
+    if (type === "UberX") {
+      return require("../../assets/images/top-UberX.png");
+    }
+    if (type === "Comfort") {
+      return require("../../assets/images/top-Comfort.png");
+    }
+    return require("../../assets/images/top-UberXL.png");
+  };
+
+  return (
+      <MapView
+        provider={PROVIDER_GOOGLE}
+        style={styles.map}
+        initialRegion={{
+          latitude: 28.453769,
+          longitude: -16.257702,
+          latitudeDelta: 0.02,
+          longitudeDelta: 0.02,
+        }}
+      >
+        {cars.map((cars) => (
+          <Marker
+            key={cars.id}
+            coordinate={{ latitude: cars.latitude, longitude: cars.longitude }}
+          >
+            <Image style={styles.marker} source={getImage(cars.type)} />
+          </Marker>
+        ))}
+      </MapView>
+  );
+};
 
 export default HomeMap;

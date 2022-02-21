@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "space-between",
   },
-  HomeMap: {
+  RouteMap: {
     height: Dimensions.get("window").height - 430,
   },
   UberTypes: {

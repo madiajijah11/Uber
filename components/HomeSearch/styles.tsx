@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         alignItems: "center",
         padding: 10,
+        borderRadius: 10,
     },
     inputText: {
         fontSize: 18,

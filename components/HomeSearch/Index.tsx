@@ -31,13 +31,6 @@ const HomeSearch = () => {
                 </View>
                 <Text style={styles.destinationText}>Sarah Home</Text>
             </View>
-
-            <View style={styles.row}>
-                <View style={styles.iconContainer}>
-                    <Feather name="home" size={16} color="#000" />
-                </View>
-                <Text style={styles.destinationText}>Sarah Home</Text>
-            </View>
         </View>
     );
 }

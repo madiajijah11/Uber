@@ -1,18 +1,24 @@
-import { StyleSheet, View } from 'react-native';
-import { RootTabScreenProps } from '../../types';
+import { StyleSheet, View } from "react-native";
+import { RootTabScreenProps } from "../../types";
 
-import HomeMap from '../../components/HomeMap/Index';
-import CovidMessage from '../../components/CovidMessage/Index';
-import HomeSearch from '../../components/HomeSearch/Index';
+import HomeMap from "../../components/HomeMap/Index";
+import CovidMessage from "../../components/CovidMessage/Index";
+import HomeSearch from "../../components/HomeSearch/Index";
 
-export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
+export default function HomeScreen({ navigation }: RootTabScreenProps<"Home">) {
   return (
     <View>
+      <View style={styles.homeMapContainer}>
         <HomeMap />
-        <CovidMessage />
-        <HomeSearch />
+      </View>
+      <CovidMessage />
+      <HomeSearch />
     </View>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  homeMapContainer: {
+    height: 200,
+  }
+});

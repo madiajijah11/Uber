@@ -17,6 +17,7 @@ import NotFoundScreen from '../screens/NotFoundScreen';
 import HomeScreen from '../screens/HomeScreen/Index';
 import DestinationSearch from '../screens/DestinationSearch/Index';
 import SearchResults from '../screens/SearchResults/Index';
+import Route from '../screens/Route/Index';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
@@ -62,19 +63,21 @@ function BottomTabNavigator() {
       initialRouteName="Home"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
-      }}>
+      }}
+    >
       <BottomTab.Screen
         name="Home"
         component={HomeScreen}
-        options={({ navigation }: RootTabScreenProps<'Home'>) => ({
-          title: 'Home Page',
+        options={({ navigation }: RootTabScreenProps<"Home">) => ({
+          title: "Home Page",
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Pressable
-              onPress={() => navigation.navigate('Modal')}
+              onPress={() => navigation.navigate("Modal")}
               style={({ pressed }) => ({
                 opacity: pressed ? 0.5 : 1,
-              })}>
+              })}
+            >
               <FontAwesome
                 name="info-circle"
                 size={25}
@@ -89,7 +92,7 @@ function BottomTabNavigator() {
         name="Destination"
         component={DestinationSearch}
         options={{
-          title: 'Destination Page',
+          title: "Destination Page",
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
@@ -97,7 +100,15 @@ function BottomTabNavigator() {
         name="Results"
         component={SearchResults}
         options={{
-          title: 'Results Page',
+          title: "Results Page",
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Routes"
+        component={Route}
+        options={{
+          title: "Routes Page",
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
