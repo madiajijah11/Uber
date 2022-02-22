@@ -16,7 +16,7 @@ const UberTypes = () => {
         <View style={styles.container}>
            {TypesData.map((type => <UberTypeRow type={type} />))}
             <Pressable style={styles.confirmPress} onPress={confirm}>
-                <Text style={styles.Text}>Confirm Order</Text>    
+                <Text style={styles.text}>Confirm Order</Text>    
             </Pressable>
         </View>
     );

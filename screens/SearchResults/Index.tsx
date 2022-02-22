@@ -8,10 +8,10 @@ import styles from "./styles";
 const SearchResults = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.HomeMap}>
+      <View style={styles.homeMap}>
         <HomeMap />
       </View>
-      <View style={styles.UberTypes}>
+      <View style={styles.uberTypes}>
         <UberTypes />
       </View>
     </View>

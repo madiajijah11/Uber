@@ -8,10 +8,10 @@ import styles from "./styles";
 const Route = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.RouteMap}>
+      <View style={styles.routeMap}>
         <RouteMap />
       </View>
-      <View style={styles.UberTypes}>
+      <View style={styles.uberTypes}>
         <UberTypes />
       </View>
     </View>

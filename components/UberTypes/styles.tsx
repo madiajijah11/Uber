@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     margin: 10,
     alignItems: "center",
   },
-  Text: {
+  text: {
     color: "white",
     fontSize: 16,
     fontWeight: "bold",

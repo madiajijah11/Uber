@@ -5,10 +5,10 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "space-between",
   },
-  HomeMap: {
+  homeMap: {
     height: Dimensions.get("window").height - 430,
   },
-  UberTypes: {
+  uberTypes: {
     height: 400,
   },
 });
