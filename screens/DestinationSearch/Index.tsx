@@ -5,6 +5,8 @@ import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplet
 
 import styles from "./styles";
 
+const GOOGLE_PLACE_APIKEY = ""; //Google Place API Key
+
 const DestinationSearch = () => {
   const [originPlace, setOriginPlace] = useState(null);
   const [destinationPlace, setDestinationPlace] = useState(null);
@@ -14,7 +16,8 @@ const DestinationSearch = () => {
     if (originPlace && destinationPlace) {
       console.warn("destinationPlace", destinationPlace);
     }
-  }), [originPlace, destinationPlace];
+  }),
+    [originPlace, destinationPlace];
 
   return (
     <SafeAreaView>
@@ -29,8 +32,7 @@ const DestinationSearch = () => {
           }}
           fetchDetails={true}
           query={{
-            key: "YOUR API KEY",
-            language: "en",
+            key: GOOGLE_PLACE_APIKEY,
           }}
         />
 
@@ -44,7 +46,7 @@ const DestinationSearch = () => {
           }}
           fetchDetails={true}
           query={{
-            key: "YOUR API KEY",
+            key: GOOGLE_PLACE_APIKEY,
             language: "en",
           }}
         />
