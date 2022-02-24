@@ -4,6 +4,7 @@ import { View, Image, FlatList } from "react-native";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import styles from "./styles";
 import cars from "../../assets/data/cars";
+import { transform } from "@babel/core";
 
 const HomeMap = () => {
   const getImage = (type: string) => {
@@ -17,25 +18,31 @@ const HomeMap = () => {
   };
 
   return (
-      <MapView
-        provider={PROVIDER_GOOGLE}
-        style={styles.map}
-        initialRegion={{
-          latitude: 28.453769,
-          longitude: -16.257702,
-          latitudeDelta: 0.02,
-          longitudeDelta: 0.02,
-        }}
-      >
-        {cars.map((cars) => (
-          <Marker
-            key={cars.id}
-            coordinate={{ latitude: cars.latitude, longitude: cars.longitude }}
-          >
-            <Image style={styles.marker} source={getImage(cars.type)} />
-          </Marker>
-        ))}
-      </MapView>
+    <MapView
+      provider={PROVIDER_GOOGLE}
+      style={styles.map}
+      initialRegion={{
+        latitude: 28.453769,
+        longitude: -16.257702,
+        latitudeDelta: 0.02,
+        longitudeDelta: 0.02,
+      }}
+    >
+      {cars.map((car) => (
+        <Marker
+          key={car.id}
+          coordinate={{ latitude: car.latitude, longitude: car.longitude }}
+        >
+          <Image
+            style={[
+              styles.marker,
+              { transform: [{ rotate: `${car.heading}deg` }] },
+            ]}
+            source={getImage(car.type)}
+          />
+        </Marker>
+      ))}
+    </MapView>
   );
 };
 
