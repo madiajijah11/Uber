@@ -4,6 +4,7 @@ import { View, TextInput, SafeAreaView } from "react-native";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
 import styles from "./styles";
+import PlaceRow from "./PlaceRow";
 
 const GOOGLE_PLACE_APIKEY = ""; //Google Place API Key
 
@@ -12,9 +13,9 @@ const DestinationSearch = () => {
   const [destinationPlace, setDestinationPlace] = useState(null);
 
   useEffect(() => {
-    console.warn("originPlace", originPlace);
+    console.warn("originPlace");
     if (originPlace && destinationPlace) {
-      console.warn("destinationPlace", destinationPlace);
+      console.warn("destinationPlace");
     }
   }),
     [originPlace, destinationPlace];
@@ -23,33 +24,57 @@ const DestinationSearch = () => {
     <SafeAreaView>
       <View style={styles.container}>
         <GooglePlacesAutocomplete
-          styles={styles.inputText}
-          placeholder="From"
+          placeholder="Where from?"
           onPress={(data, details = null) => {
             setOriginPlace({ data, details });
-            // 'details' is provided when fetchDetails = true
-            console.log(data, details);
           }}
+          suppressDefaultStyles
+          styles={{
+            textInput: styles.inputText,
+            container: styles.autoCompleteContainer,
+            listView: styles.listView,
+            separator: styles.separator,
+          }}
+          enablePoweredByContainer={false}
           fetchDetails={true}
           query={{
             key: GOOGLE_PLACE_APIKEY,
           }}
+          renderRow={(data) => <PlaceRow data={data} />}
         />
 
         <GooglePlacesAutocomplete
-          styles={styles.inputText}
           placeholder="Where to go?"
           onPress={(data, details = null) => {
             setDestinationPlace({ data, details });
-            // 'details' is provided when fetchDetails = true
-            console.log(data, details);
           }}
+          suppressDefaultStyles
+          styles={{
+            textInput: styles.inputText,
+            container: {
+              ...styles.autoCompleteContainer,
+              top: originPlace ? 105 : 55,
+            },
+            listView: styles.listView,
+            separator: styles.separator,
+          }}
+          enablePoweredByContainer={false}
           fetchDetails={true}
           query={{
             key: GOOGLE_PLACE_APIKEY,
             language: "en",
           }}
+          renderRow={(data) => <PlaceRow data={data} />}
         />
+
+        {/* Circle near Origin input */}
+        <View style={styles.circle}></View>
+        
+        {/* Line between dots */}
+        <View style={styles.line}></View>
+
+        {/* Square near Destination input */}
+        <View style={styles.square}></View>
       </View>
     </SafeAreaView>
   );
