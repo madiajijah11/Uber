@@ -4,7 +4,6 @@ import { View, Image, FlatList } from "react-native";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import styles from "./styles";
 import cars from "../../assets/data/cars";
-import { transform } from "@babel/core";
 
 const HomeMap = () => {
   const getImage = (type: string) => {
