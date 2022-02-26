@@ -19,6 +19,6 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<"Home">) {
 
 const styles = StyleSheet.create({
   homeMapContainer: {
-    height: 200,
+    height: 300,
   }
 });

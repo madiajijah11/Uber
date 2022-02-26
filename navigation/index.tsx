@@ -69,6 +69,7 @@ function BottomTabNavigator() {
         name="Home"
         component={HomeScreen}
         options={({ navigation }: RootTabScreenProps<"Home">) => ({
+          headerShown: false,
           title: "Home Page",
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
@@ -92,6 +93,7 @@ function BottomTabNavigator() {
         name="Destination"
         component={DestinationSearch}
         options={{
+          headerShown: false,
           title: "Destination Page",
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
@@ -100,6 +102,7 @@ function BottomTabNavigator() {
         name="Results"
         component={SearchResults}
         options={{
+          headerShown: false,
           title: "Results Page",
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
@@ -108,6 +111,7 @@ function BottomTabNavigator() {
         name="Routes"
         component={Route}
         options={{
+          headerShown: false,
           title: "Routes Page",
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}

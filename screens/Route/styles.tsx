@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   routeMap: {
-    height: Dimensions.get("window").height - 430,
+    height: Dimensions.get("window").height - 350,
   },
   uberTypes: {
     height: 400,
