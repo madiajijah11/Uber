@@ -55,7 +55,7 @@ function RootNavigator() {
  */
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
-function BottomTabNavigator() {
+function BottomTabNavigator() { 
   const colorScheme = useColorScheme();
 
   return (
