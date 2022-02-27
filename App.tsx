@@ -1,9 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
-import useCachedResources from './hooks/useCachedResources';
-import useColorScheme from './hooks/useColorScheme';
-import Navigation from './navigation';
+import useCachedResources from "./hooks/useCachedResources";
+import useColorScheme from "./hooks/useColorScheme";
+import Navigation from "./navigation";
+import * as Location from "expo-location";
+import 'react-native-gesture-handler';
+
+navigator.geolocation = Location;
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
