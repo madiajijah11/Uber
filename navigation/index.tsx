@@ -16,8 +16,8 @@ import { ColorSchemeName, Pressable } from "react-native";
 
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
-import ModalScreen from "../screens/ModalScreen";
-import NotFoundScreen from "../screens/NotFoundScreen";
+// import ModalScreen from "../screens/ModalScreen";
+// import NotFoundScreen from "../screens/NotFoundScreen";
 import HomeScreen from "../screens/HomeScreen/Index";
 import DestinationSearch from "../screens/DestinationSearch/Index";
 import SearchResults from "../screens/SearchResults/Index";
@@ -54,7 +54,7 @@ function RootNavigator() {
   return (
     <Stack.Navigator
       screenOptions={{ headerShown: false }}
-      defaultScreen={"Home"}
+      initialRouteName={"Home"}
     >
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Destination" component={DestinationSearch} />
