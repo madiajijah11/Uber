@@ -1,21 +1,26 @@
 import React from "react";
-import { View, Text } from "react-native";
-
+import { View, Text, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Feather } from "@expo/vector-icons";
 import styles from "./styles";
 
 const HomeSearch = () => {
+    const navigation = useNavigation();
+    const goToSearch = () => {
+        navigation.navigate("Destination")
+    }
+
     return (
         <View style={styles.container}>
             {/* Input Box */}
-            <View style={styles.inputBox}>
+            <Pressable onPress={goToSearch} style={styles.inputBox}>
                 <Text style={styles.inputText}>Where to?</Text>
                 <View style={styles.timeContainer}>
                     <Feather name="clock" size={16} color="#000" />
                     <Text> Now</Text>
                     <Feather name="chevron-down" size={16} color="#000" />
                 </View>
-            </View>
+            </Pressable>
             
             {/* Previous destination */}
             <View style={styles.row}>

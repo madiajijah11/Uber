@@ -8,6 +8,15 @@ import PlaceRow from "./PlaceRow";
 
 const GOOGLE_PLACE_APIKEY = ""; //Google Place API Key
 
+const homePlace = {
+  description: "Home",
+  geometry: { location: { lat: 48.8152937, lng: 2.4597668 } },
+};
+const workPlace = {
+  description: "Work",
+  geometry: { location: { lat: 48.8496818, lng: 2.2940881 } },
+};
+
 const DestinationSearch = () => {
   const [originPlace, setOriginPlace] = useState(null);
   const [destinationPlace, setDestinationPlace] = useState(null);
@@ -37,10 +46,14 @@ const DestinationSearch = () => {
           }}
           enablePoweredByContainer={false}
           fetchDetails={true}
+          currentLocation={true}
+          currentLocationLabel="Current location"
           query={{
             key: GOOGLE_PLACE_APIKEY,
           }}
           renderRow={(data) => <PlaceRow data={data} />}
+          renderDescription={(data) => data.description || data.vicinity}
+          predefinedPlaces={[homePlace, workPlace]}
         />
 
         <GooglePlacesAutocomplete
@@ -69,7 +82,7 @@ const DestinationSearch = () => {
 
         {/* Circle near Origin input */}
         <View style={styles.circle}></View>
-        
+
         {/* Line between dots */}
         <View style={styles.line}></View>
 
