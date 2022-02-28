@@ -25,7 +25,7 @@ const DestinationSearch = () => {
 
   useEffect(() => {
     if (originPlace && destinationPlace) {
-      navigation.navigate("Results", {
+      navigation.navigate("SearchResults", {
         originPlace,
         destinationPlace,
       });

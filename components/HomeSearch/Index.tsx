@@ -7,7 +7,7 @@ import styles from "./styles";
 const HomeSearch = () => {
     const navigation = useNavigation();
     const goToSearch = () => {
-        navigation.navigate("Destination")
+        navigation.navigate("DestinationSearch")
     }
 
     return (
