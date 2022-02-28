@@ -8,18 +8,20 @@ import TypesData from "../../assets/data/types";
 import styles from "./styles";
 
 const UberTypes = () => {
-    const confirm = () => {
-        console.warn("Confirm");
-    }
+  const confirm = () => {
+    console.warn("Confirm");
+  };
 
-    return (
-        <View style={styles.container}>
-           {TypesData.map((type => <UberTypeRow type={type} />))}
-            <Pressable style={styles.confirmPress} onPress={confirm}>
-                <Text style={styles.text}>Confirm Order</Text>    
-            </Pressable>
-        </View>
-    );
-}
+  return (
+    <View style={styles.container}>
+      {TypesData.map((type) => (
+        <UberTypeRow type={type} key={type.id} />
+      ))}
+      <Pressable style={styles.confirmPress} onPress={confirm}>
+        <Text style={styles.text}>Confirm Order</Text>
+      </Pressable>
+    </View>
+  );
+};
 
 export default UberTypes;
