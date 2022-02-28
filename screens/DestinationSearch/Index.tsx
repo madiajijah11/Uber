@@ -26,6 +26,7 @@ const DestinationSearch = () => {
   useEffect(() => {
     if (originPlace && destinationPlace) {
       navigation.navigate("SearchResults", {
+        //date sent when we navigate
         originPlace,
         destinationPlace,
       });

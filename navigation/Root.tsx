@@ -5,11 +5,11 @@ import HomeNavigator from "./Home";
 import { View, Text } from "react-native";
 import CustomDrawer from "./CustomDrawer";
 
-const DummyScreen = (props) => {
-  <View style={{flex: 1, justifyContent: "center", alignItems: "center" }}>
-    <Text>{props.name}</Text>
-  </View>;
-};
+// const DummyScreen = (props) => {
+//   <View style={{flex: 1, justifyContent: "center", alignItems: "center" }}>
+//     <Text>{props.name}</Text>
+//   </View>;
+// };
 
 const Drawer = createDrawerNavigator();
 
@@ -20,18 +20,26 @@ const RootNavigator = (props: any) => {
           (props: any) => (<CustomDrawer {...props} />)
       }>
         <Drawer.Screen name="Home" component={HomeNavigator} />
-        <Drawer.Screen name="Your Trips">
+        <Drawer.Screen name="Your Trips" component={HomeNavigator} />
+        {/* <Drawer.Screen name="Your Trips">
           {() => <DummyScreen name={"Your Trips"} />}
-        </Drawer.Screen>
-        <Drawer.Screen name="Help">
+        </Drawer.Screen> */}
+
+        <Drawer.Screen name="Help" component={HomeNavigator} />
+        {/* <Drawer.Screen name="Help">
           {() => <DummyScreen name={"Help"} />}
-        </Drawer.Screen>
-        <Drawer.Screen name="Wallet">
+        </Drawer.Screen> */}
+
+        <Drawer.Screen name="Wallet" component={HomeNavigator} />
+        {/* <Drawer.Screen name="Wallet">
           {() => <DummyScreen name={"Wallet"} />}
-        </Drawer.Screen>
-        <Drawer.Screen name="Settings">
+        </Drawer.Screen> */}
+
+        <Drawer.Screen name="Settings" component={HomeNavigator} />
+        {/* <Drawer.Screen name="Settings">
           {() => <DummyScreen name={"Settings"} />}
-        </Drawer.Screen>
+        </Drawer.Screen> */}
+
       </Drawer.Navigator>
     </NavigationContainer>
   );

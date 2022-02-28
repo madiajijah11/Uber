@@ -9,29 +9,34 @@ const CustomDrawer = (props : any) => {
   return (
     <DrawerContentScrollView {...props}>
       <View style={{ backgroundColor: "black", padding: 15 }}>
+
         {/* User row */}
         <View style={{
             flexDirection: "row",
             alignItems: "center",
         }}>
             <View style={{
+                marginVertical: 15,
                 backgroundColor: "white",
                 width: 50,
                 height: 50,
                 borderRadius: 25,
-                marginRight: 10,
+                marginRight: 20,
             }} />
             <View>
-                <Text style={{ color: "white", fontSize: 20 }}>Dian Sarah</Text>
-                <Text style={{ color: "lightgrey", fontSize: 20 }}>5.00 *</Text>
+                <Text style={{ color: "white", fontSize: 20, }}>Dian Sarah</Text>
+                <Text style={{ color: "lightgrey", fontSize: 15 }}>5.00 *</Text>
             </View>
         </View>
+
         {/* Message row */}
         <View style={{
             borderBottomColor: "white",
             borderBottomWidth: 1,
             borderTopColor: "white",
             borderTopWidth: 1,
+            paddingVertical: 5,
+            marginVertical: 15,
         }}> 
           <Pressable
             onPress={() => {
@@ -43,6 +48,7 @@ const CustomDrawer = (props : any) => {
             </Text>
           </Pressable>
         </View>
+
         {/* Do more */}
         <Pressable
           onPress={() => {
@@ -53,6 +59,7 @@ const CustomDrawer = (props : any) => {
             Do more with your account
           </Text>
         </Pressable>
+
         {/* Make money */}
         <Pressable
           onPress={() => {
@@ -63,6 +70,7 @@ const CustomDrawer = (props : any) => {
             Make money driving
           </Text>
         </Pressable>
+
       </View>
       <DrawerItemList {...props} />
     </DrawerContentScrollView>
