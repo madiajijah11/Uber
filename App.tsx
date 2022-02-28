@@ -5,6 +5,7 @@ import useCachedResources from './hooks/useCachedResources';
 import 'react-native-gesture-handler';
 import * as Location from 'expo-location';
 import RootNavigator from './navigation/Root';
+import React from 'react';
 
 navigator.geolocation = Location;
 

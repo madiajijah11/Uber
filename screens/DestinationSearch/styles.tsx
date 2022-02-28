@@ -2,10 +2,9 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 30,
     padding: 10,
     height: "100%",
-    backgroundColor: "#fff",
+    backgroundColor: "white",
   },
   inputText: {
     padding: 10,
