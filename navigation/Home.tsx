@@ -6,7 +6,7 @@ import SearchResults from "../screens/SearchResults/Index";
 
 const Stack = createNativeStackNavigator();
 
-const HomeNavigator = (props) => {
+const HomeNavigator = (props : any) => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name={"HomeScreen"} component={HomeScreen} />
